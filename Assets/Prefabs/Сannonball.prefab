@@ -14,7 +14,9 @@ GameObject:
   - component: {fileID: 917776543220835035}
   - component: {fileID: 6741702999065879630}
   - component: {fileID: 8783631635605619384}
-  m_Layer: 0
+  - component: {fileID: 6808963723389241143}
+  - component: {fileID: 557810553108359859}
+  m_Layer: 8
   m_Name: "\u0421annonball"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -147,6 +149,40 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _cannonballPrefab: {fileID: 6741702999065879630}
-  _spawnPoint: {fileID: 130353475488295051, guid: bcc4d5d2798630a4583ffbe422d0e130,
-    type: 3}
-  _speed: 10
+  _spawnPoint: {fileID: 0}
+  _speed: 2
+--- !u!114 &6808963723389241143
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2447138531233441485}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93075eb9b01e3994db72f92eb5e0368b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _condition: {fileID: 0}
+  _actions:
+  - {fileID: 557810553108359859}
+  _onCollision: 1
+  _onTrigger: 0
+  _state:
+    _enter: 1
+    _stay: 0
+    _exit: 0
+--- !u!114 &557810553108359859
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2447138531233441485}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a406a84809235d4d9e77c67125c9fa6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _objectToDestroy: {fileID: 2447138531233441485}
+  _delayToDestroy: 2
