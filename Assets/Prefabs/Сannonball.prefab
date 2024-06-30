@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4437499680570622772}
   - component: {fileID: 917776543220835035}
   - component: {fileID: 6741702999065879630}
+  - component: {fileID: 8783631635605619384}
   m_Layer: 0
   m_Name: "\u0421annonball"
   m_TagString: Untagged
@@ -133,3 +134,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &8783631635605619384
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2447138531233441485}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1569ce97129b8e49b4237214bd25748, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _cannonballPrefab: {fileID: 6741702999065879630}
+  _spawnPoint: {fileID: 130353475488295051, guid: bcc4d5d2798630a4583ffbe422d0e130,
+    type: 3}
+  _speed: 10

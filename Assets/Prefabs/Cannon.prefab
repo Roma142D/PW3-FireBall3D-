@@ -1149,6 +1149,37 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 242269852602149272}
   m_Mesh: {fileID: 0}
+--- !u!1 &969899110396865303
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2084198465360957813}
+  m_Layer: 0
+  m_Name: ShootPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2084198465360957813
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 969899110396865303}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.06215611, y: -0, z: -0, w: 0.9980665}
+  m_LocalPosition: {x: -0.548, y: 25.263, z: -25.982}
+  m_LocalScale: {x: 0.24999999, y: 0.24999999, z: 0.24999999}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 130353475488295051}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1320951297673932066
 GameObject:
   m_ObjectHideFlags: 0
@@ -3987,6 +4018,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 130353475488295051}
+  - component: {fileID: 3630221669553411347}
   m_Layer: 0
   m_Name: Cannon
   m_TagString: Untagged
@@ -4009,5 +4041,23 @@ Transform:
   m_Children:
   - {fileID: 6238635066034162720}
   - {fileID: 6612048818867344503}
+  - {fileID: 2084198465360957813}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3630221669553411347
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8604171113122758973}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11561deb894f32541a54fd36fe86c8ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _cannonball: {fileID: 8783631635605619384, guid: 568c53893d888cd4d83c606a053e295e,
+    type: 3}
+  _target: {fileID: 0}
+  _delayBetweenShoots: 0
+  _shootButton: {fileID: 0}
