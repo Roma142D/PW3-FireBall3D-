@@ -11,8 +11,7 @@ namespace RomanDoliba.Tower
         [SerializeField] private int _sectionsAmount;
         private List<TowerSectionBase> _towerSections;
         private Vector3 _currentSpawnPoint;
-        //IsIt?
-
+        
         private void Awake()
         {
             _towerSections = new List<TowerSectionBase>();
