@@ -9,29 +9,18 @@ namespace RomanDoliba.Core
     {
         [SerializeField] private CannonballBase _cannonball;
         [SerializeField] private Transform _target;
-        [SerializeField] private float _delayBetweenShoots;
         [SerializeField] private Button _shootButton;
         [SerializeField] private Transform _spawnPoint;
-        private float _timeAfterShoot = 0;
-
+        
         private void Awake()
         {
             _shootButton.onClick.AddListener(Shoot);
             _cannonball._spawnPoint = _spawnPoint;
         }
-        private void Update()
-        {
-
-        }
-
+        
         private void Shoot()
         {
             _cannonball.Shoot(_target.position);
         }
-        //private bool IsCanShoot()
-        //{
-        //    var canShoot = false;
-        //    _delayBetweenShoots -= Time.deltaTime;
-        //}
     }
 }
