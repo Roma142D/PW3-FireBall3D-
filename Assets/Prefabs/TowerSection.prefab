@@ -67,6 +67,7 @@ GameObject:
   - component: {fileID: 8912060265448691040}
   - component: {fileID: 73885215227894708}
   - component: {fileID: 2561083214554251481}
+  - component: {fileID: 8491488513018226232}
   m_Layer: 7
   m_Name: Shield
   m_TagString: Untagged
@@ -82,14 +83,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1496699260384491503}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: -0.7268144, z: 0, w: 0.686834}
   m_LocalPosition: {x: 0.9087337, y: 0.011000007, z: -0.8259419}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7557760701208607221}
   m_Father: {fileID: 2494471175294562296}
-  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -93.24, z: 0}
 --- !u!54 &1327618096319498224
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -166,6 +167,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _eventName: TakeHit
+--- !u!114 &8491488513018226232
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1496699260384491503}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 374f2677ac3c82d4e9c59a460858b417, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _rotationSpeed: {x: 75, y: 175}
+  _counterwrap: 0
 --- !u!1 &7420085945866824558
 GameObject:
   m_ObjectHideFlags: 0
@@ -1791,7 +1806,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 1339
+  m_VersionIndex: 1345
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -2040,7 +2055,7 @@ PrefabInstance:
     - target: {fileID: 8110346588771497369, guid: 9e0acef99e686ad4cb140ea87ae0e417,
         type: 3}
       propertyPath: m_VersionIndex
-      value: 5876
+      value: 5882
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8026413602577669199, guid: 9e0acef99e686ad4cb140ea87ae0e417, type: 3}

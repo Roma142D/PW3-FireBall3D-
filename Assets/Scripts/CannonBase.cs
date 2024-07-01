@@ -12,7 +12,7 @@ namespace RomanDoliba.Core
         [SerializeField] private float _delayBetweenShoots;
         [SerializeField] private Button _shootButton;
         [SerializeField] private Transform _spawnPoint;
-        private float _timeAfterShoot;
+        private float _timeAfterShoot = 0;
 
         private void Awake()
         {
