@@ -14,6 +14,7 @@ namespace RomanDoliba.Core
         [SerializeField] private GameObject _cannon;
         private float _curentTime;
 
+        public float CurentTime => _curentTime; 
         private void Awake()
         {
             _timerUI.SetText(_oneStarResult.ToString());

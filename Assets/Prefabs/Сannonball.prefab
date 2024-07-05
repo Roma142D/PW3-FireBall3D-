@@ -201,4 +201,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _collideWith:
     serializedVersion: 2
-    m_Bits: 448
+    m_Bits: 960
