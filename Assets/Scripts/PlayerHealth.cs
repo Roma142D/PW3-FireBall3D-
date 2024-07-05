@@ -1,3 +1,4 @@
+using System;
 using RomanDoliba.ActionSystem;
 using TMPro;
 using UnityEngine;
@@ -9,7 +10,8 @@ namespace RomanDoliba.Core
         [SerializeField] private int _playerHealth;
         [SerializeField] private string _onHitEventName;
         [SerializeField] private TextMeshProUGUI _healthBar;
-
+        [SerializeField] private GameObject _cannon;
+                
         private void Awake()
         {
             GlobalEventSender.OnEvent += OnTakeHit;
@@ -24,7 +26,7 @@ namespace RomanDoliba.Core
                 _healthBar.SetText($"Helth:{_playerHealth}");
                 if (_playerHealth <= 0)
                 {
-                    Time.timeScale = 0;
+                   Destroy(_cannon, 1f);
                 }
             }
         }

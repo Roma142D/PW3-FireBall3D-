@@ -1,4 +1,5 @@
 using System;
+using RomanDoliba.ActionSystem;
 using TMPro;
 using UnityEngine;
 
@@ -10,6 +11,7 @@ namespace RomanDoliba.Core
         [SerializeField] private float _twoStarResult;        
         [SerializeField] private float _threeStarResult;
         [SerializeField] private TextMeshProUGUI _timerUI;
+        [SerializeField] private GameObject _cannon;
         private float _curentTime;
 
         private void Awake()
@@ -23,7 +25,7 @@ namespace RomanDoliba.Core
 
             if (_curentTime < 0)
             {
-                Time.timeScale = 0;
+                Destroy(_cannon, 1f);
             }
         }
 
