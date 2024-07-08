@@ -293,6 +293,7 @@ MonoBehaviour:
   _playerHealth: 5
   _onHitEventName: TakeHit
   _healthBar: {fileID: 8117881113947544627}
+  _cannon: {fileID: 0}
 --- !u!114 &3890748360077899276
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -461,10 +462,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe2277975d9f7e54998c904477922e13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _oneStarResult: 60
-  _twoStarResult: 0
-  _threeStarResult: 0
+  _timeOnStarsResult:
+    OneStarResult: 90
+    TwoStarResult: 70
+    ThreeStarResult: 50
   _timerUI: {fileID: 3009148535805318299}
+  _cannon: {fileID: 0}
 --- !u!114 &7166622251200118990
 MonoBehaviour:
   m_ObjectHideFlags: 0

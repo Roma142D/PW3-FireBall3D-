@@ -7,9 +7,7 @@ namespace RomanDoliba.Core
 {
     public class TimerController : MonoBehaviour
     {
-        [SerializeField] private float _oneStarResult;
-        [SerializeField] private float _twoStarResult;        
-        [SerializeField] private float _threeStarResult;
+        [SerializeField] public TimeOnStarsResult _timeOnStarsResult;
         [SerializeField] private TextMeshProUGUI _timerUI;
         [SerializeField] private GameObject _cannon;
         private float _curentTime;
@@ -17,8 +15,8 @@ namespace RomanDoliba.Core
         public float CurentTime => _curentTime; 
         private void Awake()
         {
-            _timerUI.SetText(_oneStarResult.ToString());
-            _curentTime = _oneStarResult;
+            _timerUI.SetText(_timeOnStarsResult.OneStarResult.ToString());
+            _curentTime = _timeOnStarsResult.OneStarResult;
         }
         private void Update()
         {
@@ -34,6 +32,14 @@ namespace RomanDoliba.Core
         {
             _curentTime -= Time.deltaTime;
             _timerUI.SetText(Math.Round(_curentTime).ToString());
+        }
+
+        [System.Serializable]
+        public struct TimeOnStarsResult
+        {
+            public float OneStarResult;
+            public float TwoStarResult;        
+            public float ThreeStarResult;
         }
     }
 }
