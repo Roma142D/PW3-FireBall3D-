@@ -1,4 +1,5 @@
 using RomanDoliba.ActionSystem;
+using TMPro;
 using UnityEngine;
 
 namespace RomanDoliba.Core
@@ -8,10 +9,12 @@ namespace RomanDoliba.Core
         [SerializeField] private int _treasureHealth;
         [SerializeField] private string _onTreasureHitEventName;
         [SerializeField] private GameObject _treasure;
+        [SerializeField] private TextMeshPro _treasureUI;
 
         private void Awake()
         {
             GlobalEventSender.OnEvent += OnTreasureTakeHit;
+            _treasureUI.SetText($"{_treasureHealth}");
         }
 
         private void OnTreasureTakeHit(string eventName)
@@ -23,6 +26,7 @@ namespace RomanDoliba.Core
                 {
                     Destroy(_treasure);
                 }
+                _treasureUI.SetText($"{_treasureHealth}");
             }
         }
     }
