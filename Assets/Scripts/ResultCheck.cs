@@ -4,30 +4,29 @@ namespace RomanDoliba.Core
 {
     public class ResultCheck : MonoBehaviour
     {
-        [SerializeField] private TimerController _timerController;
         [SerializeField] private GameObject[] _starsImages;
         private float _curentResult;
         private int _starsToActivate;
+        private TimerController _timerController;
 
         private void OnEnable()
         {
+            _timerController = TimerController.Init();
             CheckTimeResult(_timerController.CurentTime);
             ActivateStarsImages();
         }
 
         private void CheckTimeResult(float curentTime)
         {
-            _curentResult = _timerController._timeOnStarsResult.OneStarResult - _timerController.CurentTime;
+            _curentResult = _timerController.OneStarResult() - _timerController.CurentTime;
 
-            if (_curentResult <= _timerController._timeOnStarsResult.ThreeStarResult)
+            if (_curentResult <= _timerController.ThreeStarResult())
             {
                 _starsToActivate = 3;
-                //return;
             }
-            else if (_curentResult <= _timerController._timeOnStarsResult.TwoStarResult && _curentResult > _timerController._timeOnStarsResult.ThreeStarResult)
+            else if (_curentResult <= _timerController.TwoStarResult() && _curentResult > _timerController.ThreeStarResult())
             {
                 _starsToActivate = 2;
-                //return;
             }
             else
             {

@@ -5,8 +5,9 @@ using UnityEngine;
 
 namespace RomanDoliba.Core
 {
-    public class TimerController : MonoBehaviour
+    public sealed class TimerController : MonoBehaviour 
     {
+        private static TimerController Instance;
         [SerializeField] public TimeOnStarsResult _timeOnStarsResult;
         [SerializeField] private TextMeshProUGUI _timerUI;
         [SerializeField] private GameObject _cannon;
@@ -15,8 +16,18 @@ namespace RomanDoliba.Core
         public float CurentTime => _curentTime; 
         private void Awake()
         {
-            _timerUI.SetText(_timeOnStarsResult.OneStarResult.ToString());
-            _curentTime = _timeOnStarsResult.OneStarResult;
+            if (Instance == null)
+            {
+                Instance = this;
+                Init();
+            }
+            else
+            {
+                Destroy(gameObject);   
+            }
+            
+            _timerUI.SetText(Instance.OneStarResult().ToString());
+            _curentTime = Instance.OneStarResult();
         }
         private void Update()
         {
@@ -32,6 +43,15 @@ namespace RomanDoliba.Core
         {
             _curentTime -= Time.deltaTime;
             _timerUI.SetText(Math.Round(_curentTime).ToString());
+        }
+
+        public static TimerController Init()
+        {
+            if (Instance == null)
+            {
+                Instance = new TimerController();
+            }
+            return Instance;
         }
 
         [System.Serializable]
