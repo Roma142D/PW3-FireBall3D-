@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace RomanDoliba.Tower
@@ -15,7 +16,7 @@ namespace RomanDoliba.Tower
         private void Awake()
         {
             _towerSections = new List<TowerSectionBase>();
-            _currentSpawnPoint = _spawnPosition.position;
+            _currentSpawnPoint = _spawnPosition.GetPosition();
             BuildTower();
         }
         private void BuildTower()
@@ -24,7 +25,7 @@ namespace RomanDoliba.Tower
             {
                 var spawnedSection = BuildSection();
                 _towerSections.Add(spawnedSection);
-                _currentSpawnPoint = spawnedSection.transform.position;
+                _currentSpawnPoint = spawnedSection.GetPosition();
             }
         }
 

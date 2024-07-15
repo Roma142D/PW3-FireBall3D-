@@ -1,13 +1,12 @@
 using System;
-using RomanDoliba.ActionSystem;
 using TMPro;
 using UnityEngine;
 
 namespace RomanDoliba.Core
 {
-    public sealed class TimerController : MonoBehaviour 
+    public class TimerController : MonoBehaviour 
     {
-        private static TimerController Instance;
+        public static TimerController Instance{get; private set;}
         [SerializeField] public TimeOnStarsResult _timeOnStarsResult;
         [SerializeField] private TextMeshProUGUI _timerUI;
         [SerializeField] private GameObject _cannon;
@@ -19,7 +18,6 @@ namespace RomanDoliba.Core
             if (Instance == null)
             {
                 Instance = this;
-                Init();
             }
             else
             {
@@ -43,15 +41,6 @@ namespace RomanDoliba.Core
         {
             _curentTime -= Time.deltaTime;
             _timerUI.SetText(Math.Round(_curentTime).ToString());
-        }
-
-        public static TimerController Init()
-        {
-            if (Instance == null)
-            {
-                Instance = new TimerController();
-            }
-            return Instance;
         }
 
         [System.Serializable]

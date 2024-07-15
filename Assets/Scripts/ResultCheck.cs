@@ -11,7 +11,7 @@ namespace RomanDoliba.Core
 
         private void OnEnable()
         {
-            _timerController = TimerController.Init();
+            _timerController = TimerController.Instance;
             CheckTimeResult(_timerController.CurentTime);
             ActivateStarsImages();
         }

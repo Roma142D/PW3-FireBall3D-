@@ -18,6 +18,7 @@ namespace RomanDoliba.Core
         
         private void Awake()
         {
+            CheckTime();
             _shootButton.onClick.AddListener(Shoot);
         }
         
@@ -38,10 +39,8 @@ namespace RomanDoliba.Core
 
         private IEnumerator ShootIntervalRoutine(System.Action callback)
         {
-            Debug.Log("CoroutineStart");
             if (_shootButton.isActiveAndEnabled)
             {
-                Debug.Log("ButtonPresed");
                 yield return new WaitForSeconds(_shootInterval);
             }
             callback?.Invoke();
@@ -49,8 +48,15 @@ namespace RomanDoliba.Core
 
         private void ClearRoutine()
         {
-            Debug.Log("ClearRoutine");
             _shootIntervalRoutine = null;
+        }
+
+        private void CheckTime()
+        {
+            if (Time.timeScale == 0)
+            {
+                Time.timeScale = 1;
+            }
         }
        
     }

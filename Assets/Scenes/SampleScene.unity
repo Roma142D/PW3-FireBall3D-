@@ -2044,7 +2044,7 @@ MonoBehaviour:
   - {fileID: -6263449530452322474, guid: fc59818f324e4b343bc2451390a00527, type: 3}
   - {fileID: -4369212888475562807, guid: e181ab3367362a947a4a98e533e5668f, type: 3}
   _spawnPosition: {fileID: 1271226812}
-  _sectionsAmount: 15
+  _sectionsAmount: 5
 --- !u!43 &1305425671
 Mesh:
   m_ObjectHideFlags: 0
