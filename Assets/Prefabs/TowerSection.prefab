@@ -198,7 +198,7 @@ GameObject:
   - component: {fileID: -6263449530452322474}
   - component: {fileID: 1867748739528018031}
   - component: {fileID: 1058627097951834096}
-  - component: {fileID: 5940079769512100864}
+  - component: {fileID: 5885282729706924025}
   m_Layer: 6
   m_Name: TowerSection
   m_TagString: Untagged
@@ -1948,7 +1948,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _condition: {fileID: 1058627097951834096}
   _actions:
-  - {fileID: 5940079769512100864}
+  - {fileID: 5885282729706924025}
   _onCollision: 1
   _onTrigger: 0
   _state:
@@ -1970,7 +1970,7 @@ MonoBehaviour:
   _collideWith:
     serializedVersion: 2
     m_Bits: 256
---- !u!114 &5940079769512100864
+--- !u!114 &5885282729706924025
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1979,11 +1979,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 7420085945866824558}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3a406a84809235d4d9e77c67125c9fa6, type: 3}
+  m_Script: {fileID: 11500000, guid: d244a6693c74a534cb3d369a99fa68b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectToDestroy: {fileID: 7420085945866824558}
-  _delayToDestroy: 0.5
+  _objectToSetActive: {fileID: 7420085945866824558}
 --- !u!1001 &7804415244741879010
 PrefabInstance:
   m_ObjectHideFlags: 0
