@@ -20,7 +20,7 @@ namespace RomanDoliba.Tower
             _currentSpawnPoint = _spawnPosition.GetPosition();
             StartCoroutine(BuildTower());
         }
-        public IObjectPool<TowerSectionBase> TowerSectionsPool
+        public ObjectPool<TowerSectionBase> TowerSectionsPool
         {
             get
             {
@@ -34,7 +34,7 @@ namespace RomanDoliba.Tower
         }
         private IEnumerator BuildTower()
         {
-            for (int i = 0; i < _maxPoolSize; i ++)
+            while (TowerSectionsPool.CountAll <= 15)
             {
                 var towerSection = TowerSectionsPool.Get();
                 _currentSpawnPoint = towerSection.GetPosition();

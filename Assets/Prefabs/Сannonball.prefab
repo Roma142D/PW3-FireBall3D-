@@ -14,8 +14,8 @@ GameObject:
   - component: {fileID: 917776543220835035}
   - component: {fileID: 6741702999065879630}
   - component: {fileID: 6808963723389241143}
-  - component: {fileID: 557810553108359859}
   - component: {fileID: -6537916351631858531}
+  - component: {fileID: 3761949211628950044}
   m_Layer: 8
   m_Name: "\u0421annonball"
   m_TagString: Untagged
@@ -150,27 +150,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _condition: {fileID: -6537916351631858531}
   _actions:
-  - {fileID: 557810553108359859}
+  - {fileID: 3761949211628950044}
   _onCollision: 1
   _onTrigger: 0
   _state:
     _enter: 1
     _stay: 0
     _exit: 0
---- !u!114 &557810553108359859
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2447138531233441485}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3a406a84809235d4d9e77c67125c9fa6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _objectToDestroy: {fileID: 2447138531233441485}
-  _delayToDestroy: 0.01
 --- !u!114 &-6537916351631858531
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -186,3 +172,16 @@ MonoBehaviour:
   _collideWith:
     serializedVersion: 2
     m_Bits: 960
+--- !u!114 &3761949211628950044
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2447138531233441485}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d244a6693c74a534cb3d369a99fa68b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _objectToSetActive: {fileID: 2447138531233441485}

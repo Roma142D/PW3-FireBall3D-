@@ -25,5 +25,6 @@ namespace RomanDoliba.ActionSystem
 
             return false;
         }
+        public override void ResetCondition() { }
     }
 }

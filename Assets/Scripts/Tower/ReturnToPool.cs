@@ -13,7 +13,7 @@ namespace RomanDoliba.Tower
         {
             _towerSection = GetComponent<TowerSectionBase>();
         }
-        public void OnSpawnStopped()
+        public void OnDisable()
         {
             _towerSectionsPool.Release(_towerSection);
         }

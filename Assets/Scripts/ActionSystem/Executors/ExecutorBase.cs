@@ -17,5 +17,9 @@ namespace RomanDoliba.ActionSystem
                 }
             }
         }
+        public virtual void ResetExecutor()
+        {
+            _condition?.ResetCondition();
+        }
     }
 }
