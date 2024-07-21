@@ -4,23 +4,27 @@ namespace RomanDoliba.Tower
 {
     public class ShieldController : MonoBehaviour
     {
-        [SerializeField] Vector2 _rotationSpeed;
-        [SerializeField] bool _counterwrap;
-
-        private void FixedUpdate()
+        public void Rotate(Vector2 rotationSpeed, bool counterwrap, int randomRotatinDirection, Transform objectToRotate)
         {
-            Rotate();
-        }
-        private void Rotate()
-        {
-            var randomSpeed = Random.Range(_rotationSpeed.x, _rotationSpeed.y);
-            if (_counterwrap)
+            var randomSpeed = Random.Range(rotationSpeed.x, rotationSpeed.y);
+            if (randomRotatinDirection == 0 && counterwrap == false)
             {
-                transform.Rotate(new Vector3(0, randomSpeed * Time.deltaTime * -1, 0));
+                objectToRotate.Rotate(new Vector3(0, randomSpeed * Time.deltaTime * -1, 0));
             }
             else
             {
-                transform.Rotate(new Vector3(0, randomSpeed * Time.deltaTime, 0));
+                objectToRotate.Rotate(new Vector3(0, randomSpeed * Time.deltaTime, 0));
+            }
+        }
+        public void Rotate(float rotationSpeed, bool counterwrap)
+        {
+            if (counterwrap == true)
+            {
+                transform.Rotate(new Vector3(0, rotationSpeed * Time.deltaTime * -1, 0));
+            }
+            else
+            {
+                transform.Rotate(new Vector3(0, rotationSpeed * Time.deltaTime, 0));
             }
         }
     }

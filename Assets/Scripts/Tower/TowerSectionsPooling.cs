@@ -11,9 +11,13 @@ namespace RomanDoliba.Tower
         [SerializeField] private TowerSectionBase _towerSection;
         [SerializeField] private Transform _spawnPosition;
         [SerializeField] private int _maxPoolSize;
-        [SerializeField] private Button button;
         private Vector3 _currentSpawnPoint;
         private ObjectPool<TowerSectionBase> _towerSectionsPool;
+        public int TowerSectionsCount
+        {
+            get => _towerSectionsPool.CountInactive;
+            private set{}
+        }
 
         private void Awake()
         {
@@ -34,7 +38,7 @@ namespace RomanDoliba.Tower
         }
         private IEnumerator BuildTower()
         {
-            while (TowerSectionsPool.CountAll <= 15)
+            while (TowerSectionsPool.CountAll <= _maxPoolSize)
             {
                 var towerSection = TowerSectionsPool.Get();
                 _currentSpawnPoint = towerSection.GetPosition();
