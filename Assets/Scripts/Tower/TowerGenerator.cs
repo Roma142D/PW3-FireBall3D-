@@ -10,7 +10,7 @@ namespace RomanDoliba.Tower
         [SerializeField] private TowerSectionBase[] _towerSectionsPrefabs;
         [SerializeField] private Transform _spawnPosition;
         [SerializeField] private int _sectionsAmount;
-        private List<TowerSectionBase> _towerSections;
+        public List<TowerSectionBase> _towerSections;
         private Vector3 _currentSpawnPoint;
         
         private void Awake()

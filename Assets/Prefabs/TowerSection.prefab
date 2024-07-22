@@ -67,7 +67,6 @@ GameObject:
   - component: {fileID: 8912060265448691040}
   - component: {fileID: 73885215227894708}
   - component: {fileID: 2561083214554251481}
-  - component: {fileID: 8491488513018226232}
   m_Layer: 7
   m_Name: Shield
   m_TagString: Untagged
@@ -167,18 +166,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _eventName: TakeHit
---- !u!114 &8491488513018226232
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1496699260384491503}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 374f2677ac3c82d4e9c59a460858b417, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &7420085945866824558
 GameObject:
   m_ObjectHideFlags: 0
@@ -197,6 +184,7 @@ GameObject:
   - component: {fileID: 1867748739528018031}
   - component: {fileID: 1058627097951834096}
   - component: {fileID: 5885282729706924025}
+  - component: {fileID: 5215585225631996583}
   m_Layer: 6
   m_Name: TowerSection
   m_TagString: Untagged
@@ -212,7 +200,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7420085945866824558}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: -0.011113143, z: 0, w: 0.99993825}
   m_LocalPosition: {x: -2.7636364, y: -0.8787878, z: 2.578788}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
@@ -1927,14 +1915,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7420085945866824558}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5b1448681701a2447b51c1c33742f29d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _shieldController: {fileID: 8491488513018226232}
+  _shieldController: {fileID: 0}
+  _shield: {fileID: 3306502981556907249}
   _rotationSpeeds: {x: 100, y: 150}
-  _rotationSpeed: 500
   _counterwrap: 1
 --- !u!114 &1867748739528018031
 MonoBehaviour:
@@ -1985,6 +1973,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _objectToSetActive: {fileID: 7420085945866824558}
+--- !u!114 &5215585225631996583
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7420085945866824558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ad982d354e5d744da285d7c9637996d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _towerData:
+    RotationLowSpeed: {x: 50, y: 100}
+    RotationHighSpeed: {x: 200, y: 300}
+    Counterwrap: 0
+    Shield: {fileID: 3306502981556907249}
 --- !u!1001 &7804415244741879010
 PrefabInstance:
   m_ObjectHideFlags: 0

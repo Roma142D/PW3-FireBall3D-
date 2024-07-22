@@ -14,50 +14,53 @@ namespace RomanDoliba.Tower
             set
             {
                 _currentState = value;
-                _text.text = _currentState.ToString();
             }
         }
-        [SerializeField] private TowerSectionsPooling _tower;
+        
         [SerializeField] private TowerData _towerData;
-        [SerializeField] private TextMeshProUGUI _text;
-        private TowerSectionBase _towerSection;
+        private TowerGenerator _tower;
+        private Vector2 _currentRotationSpeed;
+        private bool _currentRotationDirection;
         
         private void Start()
         {
             StateLowSpeed();
+            _tower = gameObject.GetComponentInParent<TowerGenerator>();
+            _currentRotationDirection = _towerData.Counterwrap;
+            _currentRotationSpeed = _towerData.RotationLowSpeed;
         }
 
         public void StateLowSpeed()
         {
             CurrentState = State.LowSpeed;
-            
-            _towerSection.RotationSpeed = new Vector2(_towerData.RotationLowSpeed.x, _towerData.RotationLowSpeed.y);
-            
+            _currentRotationSpeed = _towerData.RotationLowSpeed;          
         }
         public void StateHighSpeed()
         {
             CurrentState = State.HighSpeed;
-            
-            _towerSection.RotationSpeed = new Vector2(_towerData.RotationHighSpeed.x, _towerData.RotationHighSpeed.y);
+            _currentRotationSpeed = _towerData.RotationHighSpeed;
+            Rotate(_currentRotationSpeed, _currentRotationDirection, _towerData.Shield);
         }
         public void StateCounterwrap()
         {
             CurrentState = State.Counterwrap;
-            
-                if (_towerSection.Counterwrap == true)
-            {
-                _towerSection.Counterwrap = false;
-            }
-            else
-            {
-                _towerSection.Counterwrap = true;
-            }
+                        
+            if (_currentRotationDirection == true)
+                {
+                    _currentRotationDirection = false;
+                }
+                else
+                {
+                    _currentRotationDirection = true;
+                }
+            Rotate(_currentRotationSpeed, _currentRotationDirection, _towerData.Shield);
             
         }
 
         private void Update()
         {
             ExecuteCurrentState();
+            Rotate(_currentRotationSpeed, _currentRotationDirection, _towerData.Shield);
         }
         public void ExecuteCurrentState()
         {
@@ -67,10 +70,12 @@ namespace RomanDoliba.Tower
                 {
                     StateHighSpeed();
                 }
-                else if (_tower.TowerSectionsCount > 5)
+                
+                else if (_tower._towerSections.Count < 5)
                 {
                     StateCounterwrap();
                 }
+                
             }
             if (_currentState == State.HighSpeed)
             {
@@ -78,11 +83,30 @@ namespace RomanDoliba.Tower
                 {
                     StateCounterwrap();
                 }
-                else if (_tower.TowerSectionsCount > 10)
+                
+                else if (_tower._towerSections.Count < 10)
                 {
                     StateLowSpeed();
                 }
+                
             }
+        }
+        public void Rotate(Vector2 rotationSpeed, bool counterwrap, Transform objectToRotate)
+        {
+            var randomSpeed = Random.Range(rotationSpeed.x, rotationSpeed.y);
+            
+            if (counterwrap == false)
+            {
+                objectToRotate.Rotate(new Vector3(0, -randomSpeed * Time.deltaTime, 0));
+            }
+            else
+            {
+                objectToRotate.Rotate(new Vector3(0, randomSpeed * Time.deltaTime, 0));
+            }
+        }
+        private void OnDisable()
+        {
+            _tower._towerSections.RemoveAt(0);
         }
 
         [System.Serializable]
@@ -90,6 +114,9 @@ namespace RomanDoliba.Tower
         {
             public Vector2 RotationLowSpeed;
             public Vector2 RotationHighSpeed;
+            public bool Counterwrap;
+            public Transform Shield;
+
         }
     }
 }
